@@ -2,6 +2,8 @@
 
 [translated from](http://os.phil-opp.com/multiboot-kernel.html)
 
+如果有中文翻譯上的問題，可以在這告訴我 [report issue](https://github.com/ShawnHuang/blog_os/issues)
+
 這篇文章中會解釋如何建立一個最小的 x86 作業系統的 kernel。事實上，這個 kernel 只會 boot 並且在螢幕上印出 `OK`。之後的 blog 系列文章中會使用 [Rust](http://www.rust-lang.org/) 程式語言來擴充這個 kernel。
 
 我會盡量讓說明越詳細越好，並且讓程式碼盡可能的簡潔。如果你有任何的問題、建議或是 issues，你可以留言或是在 Github 上建立 [issue](https://github.com/phil-opp/blog_os/issues)。這些原始碼也都公開放在 [Github](https://github.com/phil-opp/blog_os/tree/multiboot_bootstrap/src/arch/x86_64) 上。

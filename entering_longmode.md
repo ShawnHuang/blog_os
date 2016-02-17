@@ -2,6 +2,8 @@
 
 [translated from](http://os.phil-opp.com/entering-longmode.html)
 
+如果有中文翻譯上的問題，可以在這告訴我 [report issue](https://github.com/ShawnHuang/blog_os/issues)
+
 在[上一篇](http://os.phil-opp.com/multiboot-kernel.html)中我們建立了一個小型的 multiboot kernel。他會印出 `OK` 然後停住。在這裡我們要試著擴充他並且讓他可以呼叫 64-bit 的 [Rust](https://www.rust-lang.org/) 程式碼，但是 CPU 現在處於 [protected mode](https://en.wikipedia.org/wiki/Protected_mode) 的情況下，只能執行 32-bit 的指令，而且受限於最多只有 4GiB 的記憶體，我們必須去設定好分頁機制 (Paging) 然後把 CPU 切換成 64-bit 的 [long mode](https://en.wikipedia.org/wiki/Long_mode)，才能夠進行下一步。
 
 我會盡量詳細說明，並且讓程式碼盡可能的簡潔。如果你有任何的問題、建議或是 issues，你可以留言或是在 Github 上建立 [issue](https://github.com/phil-opp/blog_os/issues)。這些原始碼也都公開放在 [Github](https://github.com/phil-opp/blog_os/tree/entering_longmode/src/arch/x86_64) 上。
